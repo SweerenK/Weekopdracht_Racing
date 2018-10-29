@@ -1,0 +1,50 @@
+Principes waaraan ik mij ga proberen te houden, naast de opdracht:
+
+1. 	Kleine stappen nemen per doelstelling!
+2. 	Tijdens én na elke doelstelling checken of ik blijf voldoen aan de originele opdracht.
+3.	Elke class behoud zijn eigen verantwoordelijkheden - komt DRY ten goede.
+4. 	Methodes bij voorkeur max. 20 regels lang.
+	Alleen hiervan afwijken als het ECHT niet anders kan.
+5.	Met zo weinig mogelijk omwegen en zo weinig mogelijk objectvariabelen werken naar efficientie.
+	(bv. met behulp van new Demo() i.p.v. Demo demo = new Demo();	)
+6.	Regelmatig op GitHub zetten - oefenen met feature en master branch.
+	
+
+DOELSTELLINGEN:
+1.	Maak de classes uit het UML plan, zonder methodes invulling te geven.
+2.	Maak een aantal VASTE objecten aan: 
+	2 teambazen, 2 bandenjongens, 2 mechanics, 2 coureurs, 
+	1 racebaan (4 bochten en 4 rechte stukken), 1 seizoen met 1 race, 1 bandenmaker die 1 type band maakt, 
+	1 fabrieksteam, 1 klantenteam, 1 motor, 1 interviewer met 2 pre- en 2 post-vragen.
+3.	Bouw menu's: opstarten, settings
+4.	Maak in Main doorspelen en enter-to-continue
+5.	Content-aanvullingen:	
+	- voeg aantal vragen toe voor interviewer
+	- 3 type banden
+	- 3 type motors
+	- 20 Coureurs
+	- 10 Teams	(4 fabrieksteams, 6 klantenteams)
+	- 20 Bandenjongens en 20 mechanics
+	- 5 Racebanen (variabel aantal bochten, rechtestukken)
+6.	Er kan een race plaatsvinden. De console toont na elke ronde een voortgangsupdate.
+7.	Door geimplementeerde randomness kunnen auto's, motoren, banden beschadigen, en uitvallen.
+8.	Door geimplementeerde randomness zullen racers andere racers inhalen, en kunnen rondetijden verbroken worden.
+9.	Voeg teambaas - functionaliteit toe: Teambaas stuurt andere teamleden aan:
+	- Bandenjongens kunnen klaar gaan staan
+	- Racers kunnen tempo aanpassen ten goede van de levensduur van auto, banden, motoren.
+10.	Speler kan:
+	- Een eigen team aanmaken.
+	- Eigen coureurs aanmaken.
+	- Een selectie aan banden kiezen.
+11.	Na elke race betaalt de teambaas zijn personeel. Dit gaat van het budget af.
+	Gewonnen races leveren geld op.
+12. Na elke race volgt er een klassementsoverzicht voor de coureurs en voor de teams.
+	Puntentelling zoals in Formula1.
+13.	Wanneer er een winnaar van het seizoen bekend is, zal dit worden gedeeld.
+	Ook wanneer dit al vroegtijdig bekend is.
+14.	Voorafgaande aan races worden ook trainingen gehouden.
+	Trainingen beinvloeden de levensduur en selectieaantal van de selectie banden (ook invleod op de echte race).
+EXTRA:
+15.	Trainingen bepalen de startvolgorde op de grid tijdens de echte wedstrijd.
+
+	
