@@ -5,6 +5,13 @@ import weekopdracht_racing.Autoonderdeel.Motor;
 public class Klantenteam extends Team{
 	Fabrieksteam leverancier;
 	
+	public Klantenteam(){
+		
+	}
+	public Klantenteam(Enum naam) {
+		
+	}
+	
 	public void betaalVoorMotor(Fabrieksteam fabrieksteam, Motor motor){
 		
 	}

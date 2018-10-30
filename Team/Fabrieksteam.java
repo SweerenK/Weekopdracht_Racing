@@ -6,6 +6,13 @@ import weekopdracht_racing.Autoonderdeel.Motor;
 public class Fabrieksteam extends Team{
 	ArrayList<Klantenteam> afnemersMotor;
 	
+	public Fabrieksteam() {
+		
+	}
+	public Fabrieksteam(Enum naam) {
+		
+	}
+	
 	public Motor geefUpdates() {
 		return new Motor();
 	}

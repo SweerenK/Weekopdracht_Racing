@@ -7,12 +7,17 @@ import weekopdracht_racing.*;
 
 public abstract class Team {
 	String naam;
-	ArrayList<Coureur> racers;
-	Teambaas deBaas;
 	int positie, punten;	//in teamklassement
 	double budget;
 	LocalDate oprichtingsdatum;
 	ArrayList<Raceauto> raceautos;
 	ArrayList<Teamlid> teamleden;
+
+	public Team() {
+		
+	}
+	public Team(Enum naam) {
+		this.naam = naam.toString();
+	}
 	
 }

@@ -11,6 +11,16 @@ public class Coureur extends Teamlid implements Trainbaar, Interviewbaar {
 	Raceauto auto;
 	List<Period> rondetijden = new ArrayList();
 	
+	public Coureur() {
+		
+	}
+	public Coureur(Enum naam) {
+		this.naam = naam.toString();
+	}
+	
+	
+	
+	
 	public void racen(){
 		
 	}
@@ -21,5 +31,10 @@ public class Coureur extends Teamlid implements Trainbaar, Interviewbaar {
 	public int verbeteren() {
 		//Op basis van ervaring, klassering, leeftijd (en evt (random) XP-points) verbeteren.
 		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		return naam.replace('_', ' ');
 	}
 }
