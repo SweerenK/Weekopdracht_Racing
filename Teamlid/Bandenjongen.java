@@ -3,7 +3,7 @@ package weekopdracht_racing.Teamlid;
 import weekopdracht_racing.*;
 import weekopdracht_racing.Autoonderdeel.Raceband;
 
-public class Bandenjongen extends Teamlid implements Trainbaar{
+public class Bandenjongen extends Mechanic implements Trainbaar{
 	//Komt in actie wanneer de teambaas dit eist.
 	
 	int precisie, snelheid;
