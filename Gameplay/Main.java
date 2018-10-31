@@ -17,5 +17,6 @@ public class Main {
 		inputhandler.checkMenuKeuze(menu);
 		Seizoen seizoen = new Seizoen();
 		System.out.println(seizoen.toonAlleTeams());
+		System.out.println(seizoen.toonAlleCoureurs());
 	}
 }

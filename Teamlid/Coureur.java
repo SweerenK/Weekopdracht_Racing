@@ -14,8 +14,8 @@ public class Coureur extends Teamlid implements Trainbaar, Interviewbaar {
 	public Coureur() {
 		
 	}
-	public Coureur(Enum naam) {
-		this.naam = naam.toString();
+	public Coureur(String naam) {
+		super(naam);
 	}
 	
 	public void racen(){

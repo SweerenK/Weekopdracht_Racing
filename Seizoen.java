@@ -2,13 +2,16 @@ package weekopdracht_racing;
 
 import java.util.List;
 import weekopdracht_racing.Team.*;
+import weekopdracht_racing.Teamlid.*;
 
 public class Seizoen {
 	Race[] races;
 	List<Team> teams;
-
+	List<Teamlid> coureurs;
+	
 	public Seizoen() {
 		teams = new TeamFactory().maakTeams();
+		coureurs = new TeamlidFactory().maakCoureurs();
 	}
 	
 	public String toonAlleTeams() {
@@ -17,6 +20,14 @@ public class Seizoen {
 			alleTeamNamen.append(x.getNaam() + ", ");
 		}
 		return alleTeamNamen.toString();
+	}
+	
+	public String toonAlleCoureurs() {
+		StringBuilder alleCoureurNamen = new StringBuilder();
+		for(Teamlid x: coureurs) {
+			alleCoureurNamen.append(x.getNaam() + ", ");
+		}
+		return alleCoureurNamen.toString();
 	}
 	
 	
