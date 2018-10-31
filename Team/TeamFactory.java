@@ -2,12 +2,19 @@ package weekopdracht_racing.Team;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TeamFactory {
 	String[][] teamnamen = { { "Mercedes", "Ferrari", "Red Bull", "Renault" },
 			{ "Haas", "McLaren", "Force India", "Sauber", "Toro Rosso", "Williams" } };
-	List<Team> teamlijst = new ArrayList<>();
+	private List<Team> teamlijst = new ArrayList<>();
+
+	public List<Team> getTeamlijst() {
+		return teamlijst;
+	}
+
+	public void setTeamlijst(List<Team> teamlijst) {
+		this.teamlijst = teamlijst;
+	}
 
 	public List<Team> maakTeams() {
 		for (int i = 0; i < teamnamen.length; i++) {
@@ -22,6 +29,4 @@ public class TeamFactory {
 		}
 		return teamlijst;
 	}
-	
-	
 }
