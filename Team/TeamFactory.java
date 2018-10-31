@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class TeamFactory {
-	int aantalTeMakenTeams = 10, aantalSoortenTeams = 2;
 	String[][] teamnamen = { { "Mercedes", "Ferrari", "Red Bull", "Renault" },
 			{ "Haas", "McLaren", "Force India", "Sauber", "Toro Rosso", "Williams" } };
 	List<Team> teamlijst = new ArrayList<>();
@@ -23,4 +22,6 @@ public class TeamFactory {
 		}
 		return teamlijst;
 	}
+	
+	
 }
