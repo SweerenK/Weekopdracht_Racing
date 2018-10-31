@@ -19,7 +19,14 @@ public class TeamlidFactory {
 			{ "Stoffel Vandoorne", "leeftijd", "McLaren" }, { "Marcus Ericsson", "leeftijd", "Sauber" },
 			{ "Lance Stroll", "leeftijd", "Williams" }, { "Brendon Hartley", "leeftijd", "Toro Rosso" },
 			{ "Sergey Sirotkin", "leeftijd", "Williams" } };
-	List<Teamlid> coureurlijst = new ArrayList<>();
+	String[][] teambaasnamen = { { "Toto Wolff", "Mercedes" }, { "Maurizio Arrivabene", "Ferrari" },
+			{ "Christian Horner", "Red Bull" }, { "Cyril Abiteboul", "Renault" }, { "Guenther Steiner", "Haas" },
+			{ "Lawrence Stroll", "Force India" }, { "Zak Brown", "McLaren" }, { "Frederic Vasseur", "Sauber" },
+			{ "Claire Williams", "Williams" }, { "Franz Tost", "Toro Rosso" } };
+
+	List<Teamlid> coureurlijst = new ArrayList<Teamlid>();
+	List<Teamlid> teambaaslijst = new ArrayList<Teamlid>();
+	List<Teamlid> monteurlijst = new ArrayList<Teamlid>();
 
 	public List<Teamlid> maakCoureurs(List<Team> teamlijst) {
 		for (int i = 0; i < coureurnamen.length; i++) {
@@ -27,18 +34,44 @@ public class TeamlidFactory {
 			String teamnaam = coureurnamen[i][2];
 			Coureur x = new Coureur(coureurnaam, teamnaam);
 			coureurlijst.add(x);
-			koppelenAanTeam(x, teamlijst);
+			coureurKoppelenAanTeam(x, teamlijst);
 		}
 		return coureurlijst;
 	}
 
-	public void koppelenAanTeam(Coureur coureur, List<Team> teamlijst) {
+	public List<Teamlid> maakTeammonteurs(List<Teamlid> coureurs) {
+		for (int i = 0; i < coureurs.size(); i++) {
+			for(int j = 0; j < 2; j++) {
+				StringBuilder monteurnaam = new StringBuilder("Monteur ");
+				monteurnaam.append(j+1);
+				Teamlid x = new Monteur();
+				x.setNaam(monteurnaam.toString());
+				monteurlijst.add(x);
+				x.setTeam(coureurs.get(i).getTeam());
+				System.out.println(x.getNaam() + "<>" + x.getTeam().getNaam());
+			}
+		}
+		return monteurlijst;
+	}
+
+	public List<Teamlid> maakTeambazen(List<Team> teamlijst) {
+		for (int i = 0; i < teambaasnamen.length; i++) {
+			String teambaasnaam = teambaasnamen[i][0];
+			String teamnaam = teambaasnamen[i][1];
+			Teambaas x = new Teambaas(teambaasnaam, teamnaam);
+			teambaaslijst.add(x);
+			teambaasKoppelenAanTeam(x, teamlijst);
+		}
+		return coureurlijst;
+	}
+
+	public void coureurKoppelenAanTeam(Teamlid lid, List<Team> teamlijst) {
 		koppelen_coureurs: for (int x = 0; x < coureurnamen.length; x++) {
-			if (coureurnamen[x][0].equals(coureur.getNaam())) {
+			if (coureurnamen[x][0].equals(lid.getNaam())) {
 				for (int y = 0; y < teamlijst.size(); y++) {
 					if (coureurnamen[x][2].equals(teamlijst.get(y).getNaam())) {
-						coureur.setTeam(teamlijst.get(y));
-						System.out.println(coureur.getNaam() + "<>" + teamlijst.get(y).getNaam());
+						lid.setTeam(teamlijst.get(y));
+						System.out.println(lid.getNaam() + "<>" + teamlijst.get(y).getNaam());
 						break koppelen_coureurs;
 					}
 				}
@@ -47,4 +80,23 @@ public class TeamlidFactory {
 			}
 		}
 	}
+	
+	public void teambaasKoppelenAanTeam(Teamlid lid, List<Team> teamlijst) {
+		koppelen_teambazen: for (int x = 0; x < teambaasnamen.length; x++) {
+			if (teambaasnamen[x][0].equals(lid.getNaam())) {
+				for (int y = 0; y < teamlijst.size(); y++) {
+					if (teambaasnamen[x][1].equals(teamlijst.get(y).getNaam())) {
+						lid.setTeam(teamlijst.get(y));
+						System.out.println(lid.getNaam() + "<>" + teamlijst.get(y).getNaam());
+						break koppelen_teambazen;
+					}
+				}
+			} else {
+				continue koppelen_teambazen;
+			}
+		}
+	}
+	
+	
+
 }
