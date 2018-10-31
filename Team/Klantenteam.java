@@ -8,8 +8,8 @@ public class Klantenteam extends Team{
 	public Klantenteam(){
 		
 	}
-	public Klantenteam(Enum naam) {
-		
+	public Klantenteam(String naam) {
+		super(naam);
 	}
 	
 	public void betaalVoorMotor(Fabrieksteam fabrieksteam, Motor motor){

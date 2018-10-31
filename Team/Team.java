@@ -6,7 +6,7 @@ import weekopdracht_racing.Teamlid.*;
 import weekopdracht_racing.*;
 
 public abstract class Team {
-	String naam;
+	private String naam;
 	int positie, punten;	//in teamklassement
 	double budget;
 	LocalDate oprichtingsdatum;
@@ -16,8 +16,15 @@ public abstract class Team {
 	public Team() {
 		
 	}
-	public Team(Enum naam) {
-		this.naam = naam.toString();
+	public Team(String naam) {
+		this.naam = naam;
 	}
+	public String getNaam() {
+		return naam;
+	}
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+	
 	
 }

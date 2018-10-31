@@ -5,23 +5,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class TeamFactory {
+	int aantalTeMakenTeams = 10, aantalSoortenTeams = 2;
+	String[][] teamnamen = { { "Mercedes", "Ferrari", "Red Bull", "Renault" },
+			{ "Haas", "McLaren", "Force India", "Sauber", "Toro Rosso", "Williams" } };
 	List<Team> teamlijst = new ArrayList<>();
-	
-	public List<Team> maakTeams() {	
-		for (int i = 0; i < Team_enum.values().length; i++) {
-			Enum team = Team_enum.values()[i];
-			if(i<4) {
-				teamlijst.add(new Fabrieksteam(team));
-			}else {
-				teamlijst.add(new Klantenteam(team));	
+
+	public List<Team> maakTeams() {
+		for (int i = 0; i < teamnamen.length; i++) {
+			for (int j = 0; j < teamnamen[i].length; j++) {
+				String teamnaam = teamnamen[i][j];
+				if (i == 0) {
+					teamlijst.add(new Fabrieksteam(teamnaam));
+				} else {
+					teamlijst.add(new Klantenteam(teamnaam));
+				}
 			}
 		}
 		return teamlijst;
-	}
-	
-	@Override
-	public String toString() {
-		String teamnamen = teamlijst.stream().map(Object::toString).collect(Collectors.joining(", "));
-		return teamnamen;
 	}
 }
