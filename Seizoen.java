@@ -1,19 +1,36 @@
 package weekopdracht_racing;
 
+import java.util.ArrayList;
 import java.util.List;
 import weekopdracht_racing.Team.*;
 import weekopdracht_racing.Teamlid.*;
 
 public class Seizoen {
+	
 	Race[] races;
-	List<Team> teams;
-	List<Teamlid> coureurs;
+	private List<Team> teams;
+	private List<Teamlid> coureurs;
 	
 	public Seizoen() {
-		teams = new TeamFactory().maakTeams();
-		coureurs = new TeamlidFactory().maakCoureurs();
+		setTeams(new TeamFactory().maakTeams());
+		setCoureurs(new TeamlidFactory().maakCoureurs(teams));
 	}
 	
+	public List<Team> getTeams() {
+		return teams;
+	}
+
+	public void setTeams(List<Team> teams) {
+		this.teams = teams;
+	}
+
+	public List<Teamlid> getCoureurs() {
+		return coureurs;
+	}
+
+	public void setCoureurs(List<Teamlid> coureurs) {
+		this.coureurs = coureurs;
+	}
 	public String toonAlleTeams() {
 		StringBuilder alleTeamNamen = new StringBuilder();
 		for(Team x: teams) {
