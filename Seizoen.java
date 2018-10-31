@@ -9,11 +9,16 @@ public class Seizoen {
 	
 	Race[] races;
 	private List<Team> teams;
-	private List<Teamlid> coureurs;
+	private List<Teamlid> coureurs, teambazen, monteurs;
 	
 	public Seizoen() {
 		setTeams(new TeamFactory().maakTeams());
 		setCoureurs(new TeamlidFactory().maakCoureurs(teams));
+		System.out.println("-------------");
+		setTeambazen(new TeamlidFactory().maakTeambazen(teams));
+		System.out.println("-------------");
+		setMonteurs(new TeamlidFactory().maakTeammonteurs(coureurs));
+		
 	}
 	
 	public List<Team> getTeams() {
@@ -31,6 +36,23 @@ public class Seizoen {
 	public void setCoureurs(List<Teamlid> coureurs) {
 		this.coureurs = coureurs;
 	}
+	public List<Teamlid> getMonteurs() {
+		return monteurs;
+	}
+
+	public void setMonteurs(List<Teamlid> monteurs) {
+		this.monteurs = monteurs;
+	}
+
+	
+	public List<Teamlid> getTeambazen() {
+		return teambazen;
+	}
+
+	public void setTeambazen(List<Teamlid> teambazen) {
+		this.teambazen = teambazen;
+	}
+	
 	public String toonAlleTeams() {
 		StringBuilder alleTeamNamen = new StringBuilder();
 		for(Team x: teams) {
@@ -45,6 +67,14 @@ public class Seizoen {
 			alleCoureurNamen.append(x.getNaam() + ", ");
 		}
 		return alleCoureurNamen.toString();
+	}
+	
+	public String toonAlleTeambazen() {
+		StringBuilder alleTeambaasNamen = new StringBuilder();
+		for(Teamlid x: teambazen) {
+			alleTeambaasNamen.append(x.getNaam() + ", ");
+		}
+		return alleTeambaasNamen.toString();
 	}
 	
 	

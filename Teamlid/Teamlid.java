@@ -1,10 +1,9 @@
 package weekopdracht_racing.Teamlid;
 
 import weekopdracht_racing.Team.*;
-import weekopdracht_racing.*;
 
 public abstract class Teamlid {
-	private String naam, teamnaam;
+	private String naam;
 	int leeftijd, dageninDienst;
 	double salarisPerRace;
 	private Team team;
