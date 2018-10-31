@@ -1,6 +1,5 @@
 package weekopdracht_racing;
 
-import java.util.ArrayList;
 import java.util.List;
 import weekopdracht_racing.Team.*;
 
@@ -11,6 +10,17 @@ public class Seizoen {
 	public Seizoen() {
 		teams = new TeamFactory().maakTeams();
 	}
+	
+	public String toonAlleTeams() {
+		StringBuilder alleTeamNamen = new StringBuilder();
+		for(Team x: teams) {
+			alleTeamNamen.append(x.getNaam() + ", ");
+		}
+		return alleTeamNamen.toString();
+	}
+	
+	
+	
 	
 	//public Seizoen(List<Team>) {
 		

@@ -18,9 +18,6 @@ public class Coureur extends Teamlid implements Trainbaar, Interviewbaar {
 		this.naam = naam.toString();
 	}
 	
-	
-	
-	
 	public void racen(){
 		
 	}
@@ -33,8 +30,4 @@ public class Coureur extends Teamlid implements Trainbaar, Interviewbaar {
 		return 0;
 	}
 	
-	@Override
-	public String toString() {
-		return naam.replace('_', ' ');
-	}
 }

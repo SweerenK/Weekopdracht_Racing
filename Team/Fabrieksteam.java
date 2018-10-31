@@ -9,8 +9,8 @@ public class Fabrieksteam extends Team{
 	public Fabrieksteam() {
 		
 	}
-	public Fabrieksteam(Enum naam) {
-		
+	public Fabrieksteam(String naam) {
+		super(naam);
 	}
 	
 	public Motor geefUpdates() {
