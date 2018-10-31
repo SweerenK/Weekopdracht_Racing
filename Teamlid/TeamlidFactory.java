@@ -27,6 +27,7 @@ public class TeamlidFactory {
 	List<Teamlid> coureurlijst = new ArrayList<Teamlid>();
 	List<Teamlid> teambaaslijst = new ArrayList<Teamlid>();
 	List<Teamlid> monteurlijst = new ArrayList<Teamlid>();
+	List<Teamlid> bandenjongenlijst = new ArrayList<Teamlid>();
 
 	public List<Teamlid> maakCoureurs(List<Team> teamlijst) {
 		for (int i = 0; i < coureurnamen.length; i++) {
@@ -53,6 +54,24 @@ public class TeamlidFactory {
 		}
 		return monteurlijst;
 	}
+	
+	public List<Teamlid> maakTeambandenjongens(List<Teamlid> coureurs) {
+		for (int k = 0; k < coureurs.size(); k++) {
+			for(int m = 0; m < 4; m++) {
+				StringBuilder bandenjongennaam = new StringBuilder("Bandenjongen ");
+				bandenjongennaam.append(m+1);
+				Teamlid y = new Bandenjongen();
+				y.setNaam(bandenjongennaam.toString());
+				bandenjongenlijst.add(y);
+				y.setTeam(coureurs.get(k).getTeam());
+				System.out.println(y.getNaam() + "<>" + y.getTeam().getNaam());
+			}
+		}
+		return bandenjongenlijst;
+	}
+	
+	
+	
 
 	public List<Teamlid> maakTeambazen(List<Team> teamlijst) {
 		for (int i = 0; i < teambaasnamen.length; i++) {

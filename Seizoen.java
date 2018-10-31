@@ -6,84 +6,83 @@ import weekopdracht_racing.Team.*;
 import weekopdracht_racing.Teamlid.*;
 
 public class Seizoen {
-	
+
 	Race[] races;
-	private List<Team> teams;
-	private List<Teamlid> coureurs, teambazen, monteurs;
-	
+	private List<Team> teamlijst;
+	private List<Teamlid> coureurlijst, teambaaslijst, monteurlijst, bandenjongenlijst;
+
 	public Seizoen() {
 		setTeams(new TeamFactory().maakTeams());
-		setCoureurs(new TeamlidFactory().maakCoureurs(teams));
+		setCoureurs(new TeamlidFactory().maakCoureurs(teamlijst));
 		System.out.println("-------------");
-		setTeambazen(new TeamlidFactory().maakTeambazen(teams));
+		setTeambazen(new TeamlidFactory().maakTeambazen(teamlijst));
 		System.out.println("-------------");
-		setMonteurs(new TeamlidFactory().maakTeammonteurs(coureurs));
-		
+		setMonteurs(new TeamlidFactory().maakTeammonteurs(coureurlijst));
+		System.out.println("-------------");
+		setBandenjongens(new TeamlidFactory().maakTeambandenjongens(coureurlijst));
 	}
-	
+
 	public List<Team> getTeams() {
-		return teams;
+		return teamlijst;
 	}
 
 	public void setTeams(List<Team> teams) {
-		this.teams = teams;
+		this.teamlijst = teams;
 	}
 
 	public List<Teamlid> getCoureurs() {
-		return coureurs;
+		return coureurlijst;
 	}
 
 	public void setCoureurs(List<Teamlid> coureurs) {
-		this.coureurs = coureurs;
+		this.coureurlijst = coureurs;
 	}
+
 	public List<Teamlid> getMonteurs() {
-		return monteurs;
+		return monteurlijst;
 	}
 
 	public void setMonteurs(List<Teamlid> monteurs) {
-		this.monteurs = monteurs;
+		this.monteurlijst = monteurs;
 	}
 
-	
 	public List<Teamlid> getTeambazen() {
-		return teambazen;
+		return teambaaslijst;
 	}
 
 	public void setTeambazen(List<Teamlid> teambazen) {
-		this.teambazen = teambazen;
+		this.teambaaslijst = teambazen;
 	}
-	
+
 	public String toonAlleTeams() {
 		StringBuilder alleTeamNamen = new StringBuilder();
-		for(Team x: teams) {
+		for (Team x : teamlijst) {
 			alleTeamNamen.append(x.getNaam() + ", ");
 		}
 		return alleTeamNamen.toString();
 	}
-	
+
 	public String toonAlleCoureurs() {
 		StringBuilder alleCoureurNamen = new StringBuilder();
-		for(Teamlid x: coureurs) {
+		for (Teamlid x : coureurlijst) {
 			alleCoureurNamen.append(x.getNaam() + ", ");
 		}
 		return alleCoureurNamen.toString();
 	}
-	
+
 	public String toonAlleTeambazen() {
 		StringBuilder alleTeambaasNamen = new StringBuilder();
-		for(Teamlid x: teambazen) {
+		for (Teamlid x : teambaaslijst) {
 			alleTeambaasNamen.append(x.getNaam() + ", ");
 		}
 		return alleTeambaasNamen.toString();
 	}
-	
-	
-	
-	
-	//public Seizoen(List<Team>) {
-		
-	//}
-	
-		// Geef elk team: 2 coureurs, 1 teambaas, 1 bandenjongen, 1 monteur en 1
 
+	public List<Teamlid> getBandenjongens() {
+		return bandenjongenlijst;
+	}
+
+	public void setBandenjongens(List<Teamlid> bandenjongenlijst) {
+		this.bandenjongenlijst = bandenjongenlijst;
+	}
 }
