@@ -14,7 +14,7 @@ public class Fabrieksteam extends Team{
 	}
 	
 	public Motor geefUpdates() {
-		return new Motor();
+		return new Motor(350);
 	}
 	
 	public void ontwikkelUpdates(Motor motor) {

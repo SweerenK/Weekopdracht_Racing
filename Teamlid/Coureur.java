@@ -1,5 +1,6 @@
 package weekopdracht_racing.Teamlid;
 
+import java.time.Duration;
 import java.time.Period;
 import java.util.*;
 
@@ -9,8 +10,8 @@ import weekopdracht_racing.Team.Team;
 public class Coureur extends Teamlid implements Trainbaar, Interviewbaar {
 	Map<Racebaan, Period> records = new HashMap();
 	int positie, punten, strafpunten;		//klassement
-	Raceauto auto;
-	List<Period> rondetijden = new ArrayList();
+	//private Raceauto auto;
+	List<Duration> rondetijden = new ArrayList();
 	
 	public Coureur() {
 		
