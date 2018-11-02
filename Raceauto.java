@@ -5,16 +5,38 @@ import weekopdracht_racing.Autoonderdeel.Raceband;
 import weekopdracht_racing.Teamlid.Coureur;
 
 public class Raceauto {
-	Motor motor;
+	private Motor motor;
+	
 	Coureur coureur;
 	Raceband raceband;
-	String naam;
-	int beschadigd;
+	private String naam;
 	
-	public void versnellen() {
+	int beschadigd = 0;
+	private int topsnelheid;
+	
+	public int getTopsnelheid() {
+		return topsnelheid;
+	}
+	public void setTopsnelheid(int topsnelheid) {
+		this.topsnelheid = topsnelheid;
+	}
+	public void versnellen(Racebaan baan) {
 		
 	}
-	public void vertragen() {
+	public void vertragen(Racebaan baan) {
 		
 	}
+	public String getNaam() {
+		return naam;
+	}
+	public void setNaam(String naam) {
+		this.naam = naam;
+	}
+	public Motor getMotor() {
+		return motor;
+	}
+	public void setMotor(Motor motor) {
+		this.motor = motor;
+	}
+	
 }

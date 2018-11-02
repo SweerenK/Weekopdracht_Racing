@@ -7,5 +7,11 @@ public class Race {
 	Team[] teams;
 	Coureur[] coureurs;
 	int aantalRondes;
-	Racebaan baan;
+	private Racebaan baan;
+	public Racebaan getBaan() {
+		return baan;
+	}
+	public void setBaan(Racebaan baan) {
+		this.baan = baan;
+	}
 }

@@ -1,5 +1,6 @@
 package weekopdracht_racing.Teamlid;
 
+import weekopdracht_racing.Raceauto;
 import weekopdracht_racing.Team.*;
 
 public abstract class Teamlid {
@@ -7,6 +8,15 @@ public abstract class Teamlid {
 	int leeftijd, dageninDienst;
 	double salarisPerRace;
 	private Team team;
+	private Raceauto auto;
+
+	public Raceauto getAuto() {
+		return auto;
+	}
+
+	public void setAuto(Raceauto auto) {
+		this.auto = auto;
+	}
 
 	public Teamlid() {
 

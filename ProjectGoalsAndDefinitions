@@ -14,21 +14,29 @@ DOELSTELLINGEN:
 DONE	Maak de classes uit het UML plan, zonder methodes invulling te geven.
 
 
-2.	Maak een aantal VASTE objecten aan: 
-	2 teambazen, 2 bandenjongens, 2 mechanics, 2 coureurs, 
-	1 racebaan (4 bochten en 4 rechte stukken), 1 seizoen met 1 race, 1 bandenmaker die 1 type band maakt, 
-	1 fabrieksteam, 1 klantenteam, 1 motor, 1 interviewer met 2 pre- en 2 post-vragen.
-3.	Bouw menu's: opstarten, settings
-4.	Maak in Main doorspelen en enter-to-continue
-5.	Content-aanvullingen:	
-	- voeg aantal vragen toe voor interviewer
-	- 3 type banden
-	- 3 type motors
-	- 20 Coureurs
-	- 10 Teams	(4 fabrieksteams, 6 klantenteams)
-	- 20 Bandenjongens en 20 mechanics
-	- 5 Racebanen (variabel aantal bochten, rechtestukken)
+DONE	Maak een aantal VASTE objecten aan per team: 1 teambaas, 4 bandenjongens, 4 monteurs, 2 coureurs. Ook: fabrieksteams, klantenteams, 
+-				Maak objecten voor:
+DONE			1 racebaan (4 bochten en 4 rechte stukken), 
+DONE			1 seizoen met 1 race, 
+TE DOEN			1 bandenmaker die 1 type band maakt, 
+TE DOEN	 		1 motor, 1 interviewer met 2 pre- en 2 post-vragen.
+PROGRESS		Bouw menu's: opstarten, settings
+PROGRESS		Maak in Main doorspelen en enter-to-continue
+
+-				Content-aanvullingen:	
+Could			- voeg aantal vragen toe voor interviewer
+Should(later)	- 3 type banden
+Should(later)	- 3 type motors
+DONE			20 Coureurs
+DONE			10 Teams	(4 fabrieksteams, 6 klantenteams)
+DONE			40 Bandenjongens en 40 mechanics
+TE DOEN			- 5 Racebanen (variabel aantal bochten, rechtestukken)	
+	
 6.	Er kan een race plaatsvinden. De console toont na elke ronde een voortgangsupdate.
+
+
+
+
 7.	Door geimplementeerde randomness kunnen auto's, motoren, banden beschadigen, en uitvallen.
 8.	Door geimplementeerde randomness zullen racers andere racers inhalen, en kunnen rondetijden verbroken worden.
 9.	Voeg teambaas - functionaliteit toe: Teambaas stuurt andere teamleden aan:
